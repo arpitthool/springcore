@@ -46,4 +46,13 @@ public class Student {
     public Student() {
         super();
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", studentName='" + studentName + '\'' +
+                ", studentAddress='" + studentAddress + '\'' +
+                '}';
+    }
 }
