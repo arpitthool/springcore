@@ -11,8 +11,6 @@ public class App
 {
     public static void main( String[] args )
     {
-
-        System.out.println( "Hello World!" );
         // dependency injections
         // the Student object is created by the IOC container
         // the IOC container manages the whole life cycle of the object, right from
