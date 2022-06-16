@@ -11,15 +11,21 @@
     <!--metadata for spring container to create our ready to use object-->
     <bean class="org.springcore.Student" name="student1">
         <!--using setter injection because we are using the property tag-->
-        <!--using value as attribute and not as tag-->
-        <property name="studentId" value="12345" />
+        <property name="studentId">
+            <value>12345</value>
+        </property>
 
-        <property name="studentName" value="John Doe" />
+        <property name="studentName">
+            <value>John Doe</value>
+        </property>
 
-        <property name="studentAddress" value="Atlanta" />
+        <property name="studentAddress">
+            <value>Atlanta</value>
+        </property>
     </bean>
 
     <bean class="org.springcore.Student" name="student2">
+        <!--using value as attribute and not as tag-->
         <property name="studentId" value="12346" />
 
         <property name="studentName" value="Bale Hay" />
