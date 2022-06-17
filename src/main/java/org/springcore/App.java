@@ -18,7 +18,7 @@ public class App
 
         // we create the ApplicationContext by passing the file location where we
         // have defined our beans
-        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("Student/config.xml");
 
         // we get the Student object from the context.
         Student student1 = (Student) context.getBean("student1");
