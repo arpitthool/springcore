@@ -10,7 +10,8 @@
 
     <!--metadata for spring container to create our ready to use object-->
     <bean class="org.springcore.Student" name="student1">
-        <!--using setter injection because we are using the property tag-->
+        <!--using setter injection because we are using the property tag
+        using value as an element-->
         <property name="studentId">
             <value>12345</value>
         </property>
@@ -32,4 +33,12 @@
 
         <property name="studentAddress" value="Virginia" />
     </bean>
+
+    <!-- using p schema and for this xmlns:p="http://www.springframework.org/schema/p"
+    is necessary to be added in the beans tag-->
+    <bean class="org.springcore.Student" name="student3"
+          p:studentId="12347"
+          p:studentName="Haly Cox"
+          p:studentAddress="Seatle"
+    />
 </beans>
