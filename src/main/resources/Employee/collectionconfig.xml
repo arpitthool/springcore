@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="Employee1" class="com.springcore.collections.Employee">
+    <bean name="Employee1" class="org.springcore.collections.Employee">
         <property name="name" value="Kevin"/>
         <property name="phones">
             <list>
@@ -37,7 +37,7 @@
         </property>
     </bean>
 
-    <bean name="Employee2" class="com.springcore.collections.Employee">
+    <bean name="Employee2" class="org.springcore.collections.Employee">
         <property name="name" value="Kevin"/>
         <property name="phones">
             <!-- no need for list tag if there is only one element           -->
