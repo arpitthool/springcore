@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  Constructor injection using the constructor-arg tag to pass parameter values to the constructor  -->
+    <bean class="org.springcore.faculty.TeachingAssistant" name="ta1">
+        <constructor-arg value="Jack" />
+    </bean>
+
+    <bean class="org.springcore.faculty.Professor" name="professor1">
+        <constructor-arg value="Ben" />
+        <constructor-arg value="78" type="int" />
+        <constructor-arg ref="ta1" />
+    </bean>
+
+    <!--  Constructor injection using c schema to pass parameter values to the constructor  -->
+    <bean class="org.springcore.faculty.TeachingAssistant" name="ta2"
+          c:name="Holly"/>
+
+    <bean class="org.springcore.faculty.Professor" name="professor2"
+          c:name="Jenna"
+          c:id="98"
+          c:ta-ref="ta2"/>
+
+    <bean class="org.springcore.semester.Book" name="book1" p:name="Learning Spring!"/>
+    <bean class="org.springcore.semester.Course" name="course1" p:book-ref="book1" p:name="Java Frameworks"/>
+
+    <bean class="org.springcore.semester.Book" name="book2" p:name="Learning Laravel!"/>
+    <bean class="org.springcore.semester.Course" name="course2" p:book-ref="book1" p:name="PHP Frameworks"/>
+
+    <bean class="org.springcore.faculty.TeachingAssistant" name="ta3"
+          c:name="Morby"/>
+
+    <bean class="org.springcore.faculty.Professor" name="professor3"
+          c:name="Xyron"
+          c:id="56"
+          c:ta-ref="ta3"
+    >
+        <constructor-arg>
+            <list>
+                <ref bean="course1"/>
+                <ref bean="course2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
+
+</beans>
