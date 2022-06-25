@@ -14,10 +14,13 @@
         <constructor-arg value="Jack" />
     </bean>
 
+    <!--  In case of multiple constructors, we can specify which one to call by specifying parameter
+      type, and we can also specify which value to pass at which position using index
+      By default the values are taking as String type-->
     <bean class="org.springcore.faculty.Professor" name="professor1">
-        <constructor-arg value="Ben" />
-        <constructor-arg value="78" type="int" />
-        <constructor-arg ref="ta1" />
+        <constructor-arg value="Ben" index="0"/>
+        <constructor-arg value="78" type="int" index="1"/>
+        <constructor-arg ref="ta1" type="org.springcore.faculty.TeachingAssistant" index="2"/>
     </bean>
 
     <!--  Constructor injection using c schema to pass parameter values to the constructor  -->
@@ -42,6 +45,8 @@
           c:name="Xyron"
           c:id="56"
           c:ta-ref="ta3"
+          init-method="myInit"
+          destroy-method="myDestroy"
     >
         <constructor-arg>
             <list>
