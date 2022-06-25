@@ -9,6 +9,9 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!--    to enable all annotations in the project such as PostConstruct and PreDestroy-->
+    <context:annotation-config />
+
     <!--  Constructor injection using the constructor-arg tag to pass parameter values to the constructor  -->
     <bean class="org.springcore.faculty.TeachingAssistant" name="ta1">
         <constructor-arg value="Jack" />
