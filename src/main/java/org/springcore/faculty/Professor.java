@@ -43,4 +43,14 @@ public class Professor {
                 ", currentCourses=" + currentCourses +
                 '}';
     }
+
+    public void myInit() {
+        System.out.printf("Professor is starting their term with us. Hello "+this.name);
+    }
+
+    public void myDestroy() {
+        System.out.printf("Professor is ending their term with us. Good bye "+this.name);
+    }
+
+
 }
