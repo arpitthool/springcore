@@ -1,7 +1,19 @@
 package org.springcore.faculty;
 
-public class TeachingAssistant {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class TeachingAssistant implements InitializingBean, DisposableBean {
     private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        System.out.println("\ninside setter TA");
+        this.name = name;
+    }
 
     /*
     Constructor
@@ -17,8 +29,28 @@ public class TeachingAssistant {
 
     @Override
     public String toString() {
-        return "TeachingAssistant{" +
+        return "\nTeachingAssistant{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        // this is the init method in InitializingBean
+        System.out.println("\nA new teaching assistant is starting their term with us. Hello! "+this.name);
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        // this is the destroy method in DisposableBean
+        System.out.println("\nA teaching assistant is ending their term with us. Goodbye! "+this.name);
+    }
+
+    public void myInit() throws Exception {
+        System.out.println("\nmyinit");
+    }
+
+    public void myDestroy() throws Exception {
+        System.out.println("\nmyDestroy");
     }
 }

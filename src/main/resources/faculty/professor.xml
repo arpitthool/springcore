@@ -39,7 +39,10 @@
     <bean class="org.springcore.semester.Course" name="course2" p:book-ref="book1" p:name="PHP Frameworks"/>
 
     <bean class="org.springcore.faculty.TeachingAssistant" name="ta3"
-          c:name="Morby"/>
+          destroy-method="myDestroy"
+          init-method="myInit"
+          c:name="Morby"
+    />
 
     <bean class="org.springcore.faculty.Professor" name="professor3"
           c:name="Xyron"

@@ -16,6 +16,7 @@ public class Test {
         System.out.println(professor2.toString());
         System.out.println(professor3.toString());
 
+        // resgistering shut down hook
         context.registerShutdownHook();
     }
 }
