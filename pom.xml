@@ -36,6 +36,14 @@
       <version>5.3.20</version>
     </dependency>
 
+    <!-- As the annotations : PostConstruct and PreDestroy are a part of JavaEE and not included in
+    java version after 9, we need this dependency to use them-->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
