@@ -1,9 +1,14 @@
 package org.springcore.study;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Test {
 
+    // using @Qualifier we can specify the bean name, this should be used with @Autowired
+    // else it may cause errors
+    @Autowired
+    @Qualifier("question1")
     private Question question;
     private String name;
     private int totalMarks;
@@ -79,7 +84,6 @@ public class Test {
         this.duration = duration;
     }
 
-    @Autowired
     public Test(Question question, String name, int totalMarks, String date, String totalQuestions) {
         this.question = question;
         this.name = name;

@@ -10,10 +10,16 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config />
-    <bean class="org.springcore.study.Question" name="question1"
+    <bean class="org.springcore.study.Question" name="question"
           c:answer="Object oriented programming"
           c:type="theory"
           c:question="What is the full form of OOP?"
+    />
+
+    <bean class="org.springcore.study.Question" name="question1"
+          c:answer="Virginia Tech"
+          c:type="theory"
+          c:question="What is the full form of VT?"
     />
 
     <bean class="org.springcore.study.Test" name="test"
