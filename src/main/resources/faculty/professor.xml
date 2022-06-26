@@ -63,5 +63,18 @@
     </bean>
 
 
+    <bean class="org.springcore.faculty.TeachingAssistant" name="ta"
+          c:name="Lupas"
+    />
+
+    <bean class="org.springcore.faculty.Professor" name="professor4"
+          c:name="Pam"
+          c:id="46"
+          autowire="constructor"
+    >
+
+    </bean>
+
+
 
 </beans>
