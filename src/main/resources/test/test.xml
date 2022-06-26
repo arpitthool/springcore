@@ -14,6 +14,7 @@
        ">
 
     <context:annotation-config />
+    <context:component-scan base-package="org.springcore.study"/>
 
     <!-- standalone list, can be used anywhere when needed and not bound to a specific bean -->
     <util:list list-class="java.util.ArrayList" id="myQuestionsList">

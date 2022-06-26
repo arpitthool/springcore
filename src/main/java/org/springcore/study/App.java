@@ -12,5 +12,8 @@ public class App {
 
         Test test2 = (Test) context.getBean("test2");
         System.out.println(test2);
+
+        Course course = (Course) context.getBean("myCourseBeanName");
+        System.out.println(course);
     }
 }
