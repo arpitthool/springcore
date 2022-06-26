@@ -4,12 +4,54 @@
        xmlns:context = "http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       ">
 
     <context:annotation-config />
+
+    <!-- standalone list, can be used anywhere when needed and not bound to a specific bean -->
+    <util:list list-class="java.util.ArrayList" id="myQuestionsList">
+        <bean class="org.springcore.study.Question" name="lisQuestion1"
+              c:answer="Q1"
+              c:type="theory"
+              c:question="A1"
+        />
+        <bean class="org.springcore.study.Question" name="lisQuestion2"
+              c:answer="Q2"
+              c:type="theory"
+              c:question="A2"
+        />
+        <bean class="org.springcore.study.Question" name="lisQuestion3"
+              c:answer="Q3"
+              c:type="theory"
+              c:question="A3"
+        />
+        <bean class="org.springcore.study.Question" name="lisQuestion4"
+              c:answer="Q4"
+              c:type="theory"
+              c:question="A4"
+        />
+        <bean class="org.springcore.study.Question" name="lisQuestion5"
+              c:answer="Q5"
+              c:type="theory"
+              c:question="A5"
+        />
+
+    </util:list>
+
+    <!-- standalone properties -->
+    <util:properties id="myProperties">
+        <prop key="username">myUsername</prop>
+        <prop key="apikey">mySecretApiKey</prop>
+        <prop key="url">myURL</prop>
+    </util:properties>
+
     <bean class="org.springcore.study.Question" name="question"
           c:answer="Object oriented programming"
           c:type="theory"
@@ -22,11 +64,19 @@
           c:question="What is the full form of VT?"
     />
 
-    <bean class="org.springcore.study.Test" name="test"
+    <bean class="org.springcore.study.Test" name="test1"
           c:name="my test"
           c:date="26th june 2022"
           c:totalMarks="22"
           c:totalQuestions="90"
           c:duration="90"
+    />
+
+    <bean class="org.springcore.study.Test" name="test2"
+          c:name="my test2"
+          c:date="27th june 2022"
+          c:totalMarks="24"
+          c:totalQuestions="9"
+          c:duration="80"
     />
 </beans>

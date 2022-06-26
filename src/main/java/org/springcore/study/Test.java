@@ -3,23 +3,45 @@ package org.springcore.study;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import java.util.List;
+import java.util.Properties;
+
 public class Test {
 
-    // using @Qualifier we can specify the bean name, this should be used with @Autowired
-    // else it may cause errors
-    @Autowired
-    @Qualifier("question1")
-    private Question question;
     private String name;
     private int totalMarks;
     private String date;
     private String totalQuestions;
 
+    @Autowired
+    @Qualifier("myProperties")
+    private Properties properties;
+
+
+    @Autowired
+    @Qualifier("myQuestionsList")
+    private List<Question> questionList;
     private int duration;
 
     /*
     getter and setter
      */
+
+    public Properties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
+    public List<Question> getQuestionList() {
+        return questionList;
+    }
+
+    public void setQuestionList(List<Question> questionList) {
+        this.questionList = questionList;
+    }
 
     public int getDuration() {
         return duration;
@@ -27,14 +49,6 @@ public class Test {
 
     public void setDuration(int duration) {
         this.duration = duration;
-    }
-
-    public Question getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(Question question) {
-        this.question = question;
     }
 
     public String getName() {
@@ -84,12 +98,21 @@ public class Test {
         this.duration = duration;
     }
 
-    public Test(Question question, String name, int totalMarks, String date, String totalQuestions) {
-        this.question = question;
+    public Test(String name, int totalMarks, String date, String totalQuestions) {
         this.name = name;
         this.totalMarks = totalMarks;
         this.date = date;
         this.totalQuestions = totalQuestions;
+    }
+
+    public Test(String name, int totalMarks, String date, String totalQuestions, Properties properties, List<Question> questionList, int duration) {
+        this.name = name;
+        this.totalMarks = totalMarks;
+        this.date = date;
+        this.totalQuestions = totalQuestions;
+        this.properties = properties;
+        this.questionList = questionList;
+        this.duration = duration;
     }
 
     /*
@@ -98,12 +121,14 @@ public class Test {
 
     @Override
     public String toString() {
-        return "\nTest{" +
-                "question=" + question +
-                ", name='" + name + '\'' +
+        return "Test{" +
+                "name='" + name + '\'' +
                 ", totalMarks=" + totalMarks +
                 ", date='" + date + '\'' +
                 ", totalQuestions='" + totalQuestions + '\'' +
+                ", properties=" + properties +
+                ", questionList=" + questionList +
+                ", duration=" + duration +
                 '}';
     }
 }
