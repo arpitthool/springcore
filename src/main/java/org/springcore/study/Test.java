@@ -2,6 +2,7 @@ package org.springcore.study;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Test {
     private String date;
     private String totalQuestions;
 
+    // can be directly assigned value using
+//     @Value("#{myProperties}")
     @Autowired
     @Qualifier("myProperties")
     private Properties properties;
