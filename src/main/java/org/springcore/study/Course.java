@@ -4,9 +4,11 @@ package org.springcore.study;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("myCourseBeanName")
+@Scope("singleton")
 public class Course {
 
     @Value("Spring Framework CS 501")

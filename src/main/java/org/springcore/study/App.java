@@ -7,13 +7,8 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("test/test.xml");
 
-        Test test1 = (Test) context.getBean("test1");
-        System.out.println(test1);
-
-        Test test2 = (Test) context.getBean("test2");
-        System.out.println(test2);
-
         Course course = (Course) context.getBean("myCourseBeanName");
         System.out.println(course);
+        System.out.println(course.hashCode());
     }
 }
